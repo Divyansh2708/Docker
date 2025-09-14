@@ -4,6 +4,9 @@ pipeline {
             image 'node:18-alpine'
         }
     }
+    environment {
+        DOCKER_HOST = 'tcp://docker:2375'
+    }
     stages {
         stage('Build') {
             steps {
@@ -27,3 +30,4 @@ pipeline {
         }
     }
 }
+
